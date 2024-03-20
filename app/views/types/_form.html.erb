@@ -1,0 +1,13 @@
+<%= form_for(type) do |f| %>  
+
+
+    <p><%= f.label :namex%><%= f.text_field :name%> </p> <br> 
+    
+    <% type.errors.full_messages_for(:name).each do |message| %>
+    	<div><%= message %></div>
+    <% end %>
+
+  <div class="actions"> 
+    <%= f.submit "Submit" %> 
+  </div> 
+<% end %> 

@@ -1,0 +1,12 @@
+<%= render "header" %>
+<h1> Types Index </h1>
+<ul>
+	<% @types.each do |type| %> 
+		<li>
+			<a href="types/<%= type.name %>" >
+ 				<p><%= type.name%></p> 
+ 			</a>
+		</li>
+	<% end %>
+</ul>
+  <%= link_to 'New Type', new_type_path %> 

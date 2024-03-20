@@ -1,0 +1,12 @@
+<%= render "header" %>
+<h1> Pokemon Index </h1>
+<ul>
+	<% @pokemon.each do |pokemon| %> 
+		<li>
+			<a href="pokemon/<%= pokemon.name %>" >
+ 				<p><%= pokemon.name %>: <%= pokemon.types.first.name%></p> 
+ 			</a>
+		</li>
+	<% end %>
+</ul>
+  <%= link_to 'New Pokemon', new_pokemon_path %> 
