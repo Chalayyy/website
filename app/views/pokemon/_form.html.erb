@@ -1,0 +1,15 @@
+<%= form_with model: @pokemon do |form| %>  
+
+
+    <p><%= form.label :name%>  <%= form.text_field :name%> </p> <br> 
+    
+    <% pokemon.errors.full_messages_for(:name).each do |message| %>
+    	<div><%= message %></div>
+    <% end %>
+    
+    <p><%= form.label :type%>  <%= form.collection_select :type_ids, Type.order(:name), :id, :name %> </p> <br>
+    
+  <div class="actions"> 
+    <%= form.submit "Submit" %> 
+  </div> 
+<% end %> 

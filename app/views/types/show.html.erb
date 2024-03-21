@@ -1,0 +1,18 @@
+<%= render "header" %>
+<h1><%= @type.name %></h1>
+
+<ul>
+  <% @type.pokemon.each do |pokemon| %> 
+    <li>
+      <a href="/pokemon/<%= pokemon.name %>" >
+        <p><%= pokemon.name%></p> 
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+ <%= link_to 'Edit Type', edit_type_path(@type) %>
+ <%= link_to "Destroy", type_path(@type), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>

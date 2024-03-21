@@ -1,0 +1,11 @@
+<%= render partial: "header" %>
+
+<h1><%= @pokemon.name %></h1>
+
+<p><%= Type.find_by(name: @pokemon.types.first.name) ? link_to(@pokemon.types.first.name, type_path(@pokemon.types.first.name)) : "xxx" %></p>
+
+ <%= link_to 'Edit Pokemon', edit_pokemon_path(@pokemon) %>
+ <%= link_to "Destroy", pokemon_path(@pokemon), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
